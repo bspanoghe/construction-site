@@ -49,16 +49,22 @@
                 <li>A barrel roll</li>
             </ol>
             <br/>
-            <button onclick="claimSoul()">Pledge allegiance</button>
+            <button onclick="claimSoul()" class="soulButton">Pledge allegiance</button>
         </p>
     </section>
 
     <footer class="hell">
         Fire of hell
     </footer>
+
     <script>
         function claimSoul(){
             alert("Soul claimed!")
+            document.querySelector(".soulButton").onclick = soulClaimed; // change behaviour of button
+        }
+
+        function soulClaimed(){
+            alert("Your soul has already been claimed!")
         }
     </script>
 </body>

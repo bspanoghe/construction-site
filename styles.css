@@ -34,12 +34,16 @@ header div {
     font-size: xx-large;
     width: 60%;
     text-align: center;
+    color: rgb(248, 237, 151);
 }
 
 /* ## NAVIGATION */
 
 nav a {
     background: rgb(251, 77, 189);
+    border-style: solid;
+    border-color: rgb(248, 237, 151);
+    border-width: 1px;
 }
 
 nav.leftnav {
@@ -54,7 +58,7 @@ nav.leftnav ul {
 
 nav.leftnav a {
     font-size: large;
-    color: rgb(233, 225, 158);
+    color: black;
     padding: 20px 20px 20px 20px;
 }
 
@@ -110,6 +114,8 @@ button {
     justify-content: center;
     align-items: center;
     height: 600px;
+    border-style: solid;
+    border-color: rgb(248, 237, 151);
 }
 
 .fameimg {
@@ -128,8 +134,50 @@ button {
 }
 
 .fametext ul {
-    list-style-type: none;
+    list-style-type: square;
     line-height: 1.5;
+    margin-left: 10px;
+}
+
+/* MONO */
+
+.marginhaver {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+}
+
+.comicpage {
+    display: flex;
+    justify-content: space-around;
+    min-height: calc(100vh - 80px); /* full browser height - header*/
+    width: 1000px;
+    flex-direction: column;
+    background-color: rgb(18, 12, 17);
+}
+
+.comicslice {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.comicpanel {
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(38, 15, 32);
+}
+
+.comictext {
+    display: flex;
+    align-items: center;
+}
+
+.comictext p {
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(38, 15, 32);
+    padding: 20px;
 }
 
 /* # FOOTER */
