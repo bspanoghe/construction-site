@@ -8,25 +8,30 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pages/factory.html">The Factory</a></li>
-            <li><a href="pages/god.html">Become God</a></li>
-        </ul>
-    </nav>
-    
     <header>
-        <div></div>
-        YOU DARE TRESPASS ONTO MY DOMAIN, BOY?
-        <div></div>
+        <nav class="leftnav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/fame.html">Hall of Fame</a></li>
+                <li><a href="pages/god.html">Become God</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            YOU DARE TRESSPASS INTO MY DOMAIN?
+        </div>
+
+        <nav class="rightnav">
+            <a href="pages/mono.html">The smiling man</a>
+        </nav>
     </header>
 
     <section>
         <h1>The site awakens</h1>
         <h2>Chapter 1: A boy and his horse</h2>
+        <br/>
         <p>
-            Horses aren't real you <em class="evil">fool</em>.<br/>
+            Horses aren't real you <em><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="evil">fool</a></em>.<br/>
             <strong>But I am.</strong><br/><br/>
             I am also:
             <ul> <!--unordered list-->
@@ -35,15 +40,26 @@
                 <li>sexy</li>
             </ul>
     
+            <br/>
             Now here are some things you're gonna do:
+            <br/><br/>
             <ol> <!--Ordered list-->
                 <li>Pledge allegiance to the church of death</li>
                 <li>100 pushups</li>
                 <li>A barrel roll</li>
             </ol>
-            <button>Pledge allegiance</button>
+            <br/>
+            <button onclick="claimSoul()">Pledge allegiance</button>
         </p>
     </section>
 
+    <footer class="hell">
+        Fire of hell
+    </footer>
+    <script>
+        function claimSoul(){
+            alert("Soul claimed!")
+        }
+    </script>
 </body>
 </html>
