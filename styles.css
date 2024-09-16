@@ -26,7 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 5%;
+    padding: 0 5%;
 }
 
 /* ## DRAMATIC TITLE */
@@ -75,7 +75,7 @@ nav.rightnav a{
 /* # BODY */
 
 section {
-    margin: 30px;
+    margin: 5vh 10vw;
 }
 
 p {
@@ -99,23 +99,25 @@ button {
 .fame {
     display: flex;
     justify-content: space-around;
+    /* background-color: aqua; */
 }
 
 .famebox {
-    margin: auto;
     padding: 30px;
     background-color: rgb(251, 77, 189);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
-    height: 600px;
+    max-height: 70%;
+    max-width: 20%;
     border-style: solid;
     border-color: rgb(248, 237, 151);
 }
 
 .fameimg {
-    width: 300px;
+    max-width: 80%;
+    max-height: 70%;
 }
 
 .fametext {
@@ -123,6 +125,7 @@ button {
     background-color: rgb(248, 237, 151);
     color: rgb(38, 15, 32);
     padding: 10px 20px;
+    max-width: 90%;
 }
 
 .fametext h1 {
@@ -186,7 +189,7 @@ button {
     position: fixed; /* make sure it doesn't move as you scroll */
     filter:hue-rotate(-70deg); /* make flames purple */
     background-size: 300px; /* rescales image */
-    height: 150px;
+    height: 15vh;
     width: 100%;
 }
 
