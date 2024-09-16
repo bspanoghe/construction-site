@@ -24,15 +24,15 @@ header {
     height: 80px;
     background: rgb(18, 12, 17);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 0 5%;
 }
 
 /* ## DRAMATIC TITLE */
 
 header div {
     font-size: xx-large;
-    width: 60%;
     text-align: center;
     color: rgb(248, 237, 151);
 }
@@ -47,7 +47,7 @@ nav a {
 }
 
 nav.leftnav {
-    width: 20%;
+    min-width: 400px;
 }
 
 nav.leftnav ul {
@@ -60,10 +60,6 @@ nav.leftnav a {
     font-size: large;
     color: black;
     padding: 20px 20px 20px 20px;
-}
-
-nav.rightnav {
-    width: 10%;
 }
 
 nav.rightnav a{
