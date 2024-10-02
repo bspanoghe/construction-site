@@ -1,0 +1,79 @@
+/* MONO */
+
+*{
+    padding: 0px;
+    margin: 0px;
+} /* set padding and margin to 0 as default */
+
+body {
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* makes sure comic is centered in entire screen */
+    width: 100vw;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vmin;
+    width: 16/9*100vmin;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.panel {
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    position: relative;
+    margin: 3vmin;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    position: absolute;
+    text-align: center;
+
+    border-style: solid;
+    border-color: black;
+    color: black;
+    background-color: white;
+
+    font-family:"Comic Sans MS", "Comic Sans";
+    font-size: 2vmin;
+
+    padding: 2vmin;
+}
+
+.inv {
+    border-color: white;
+    background-color: black;
+    color: white;
+}
