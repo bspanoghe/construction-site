@@ -4,6 +4,7 @@ var pagenumber = Number(path.split("/").pop().split(".")[0])
 var rightcounter = 0
 
 window.addEventListener("keydown", keyBlade, false);
+window.addEventListener("click", clickBlade, false);
 
 async function keyBlade(evt) {
     if (evt.key == "Escape") {
@@ -20,14 +21,32 @@ async function keyBlade(evt) {
 
     if (evt.key == "ArrowRight") {
         rightcounter++
+        doAction(rightcounter)
     }
-    
-    if (rightcounter == 1) {
-        var checkpage = await fetch("./" + (pagenumber+1) + ".html");
-        if (checkpage.ok) {
-            location= "./" + (pagenumber+1) + ".html"
+}
+
+function clickBlade() {
+    rightcounter++
+    doAction(rightcounter)
+}
+
+function doAction(rightcounter) {
+    if (typeof actions !== 'undefined') { // the variable is defined
+        if ((rightcounter-1) < actions.length) {
+            actions[rightcounter-1]()
         } else {
-            location= "../mono.html"
+            goNextOrHome()
         }
+    } else {
+        goNextOrHome()
+    }
+}
+
+async function goNextOrHome() {
+    var checkpage = await fetch("./" + (pagenumber+1) + ".html");
+    if (checkpage.ok) {
+        location= "./" + (pagenumber+1) + ".html"
+    } else {
+        location= "../mono.html"
     }
 }

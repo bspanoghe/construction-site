@@ -9,7 +9,7 @@
 
 <body>
     <div class="page">
-        <div class="row" style="height:70%;">
+        <div class="row" style="height:80%;">
             <div class="panel" style="height:100%;">
                 <img src="../../images/itsfine.png" alt="" class="img">
     
@@ -19,7 +19,7 @@
             </div>
 
             <div class="col" style="width:40%;">
-                <div class="panel" style="height:40%;">
+                <div class="hidden panel" style="height:40%;">
                     <img src="../../images/itsfine.png" alt="" class="img">
         
                     <div class="text" style="top:30%; left:70%;">
@@ -27,7 +27,7 @@
                     </div>  
                 </div>
 
-                <div class="panel" style="height:80%;">
+                <div class="hidden panel" style="height:80%;">
                     <img src="../../images/itsfine.png" alt="" class="img">
         
                     <div class="text" style="top:30%; left:70%;">
@@ -38,6 +38,19 @@
         </div>
     </div>
 
+    <script>
+        var audio = new Audio("../../audio/AtWhatCost_ringtone.mp3");
+        audio.play();
+        actions = [
+            function() {
+                audio.pause()
+                var audio2 = new Audio("../../audio/phonepickup.mp3");
+                audio2.play();
+                document.getElementsByClassName("hidden")[0].className = "panel";
+            },
+            function() {document.getElementsByClassName("hidden")[0].className = "panel"},
+        ]
+    </script>
     <script src="../../scripts/mono.js"></script>
 </body>
 </html>
