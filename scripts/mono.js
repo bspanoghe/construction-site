@@ -1,12 +1,13 @@
+var useSPA = true;
+
 var path = window.location.pathname;
 var pagenumber = Number(path.split("/").pop().split(".")[0])
-
 var rightcounter = 0
 
 window.addEventListener("keydown", keyBlade, false);
 window.addEventListener("click", clickBlade, false);
 
-async function keyBlade(evt) {
+function keyBlade(evt) {
     if (evt.key == "Escape") {
         location = "../mono.html"        
     }
@@ -15,13 +16,18 @@ async function keyBlade(evt) {
         if (pagenumber == 1) {
             location = "../mono.html"
         } else {
-            location= "./" + (pagenumber-1) + ".html"
+            pagenumber--
+            loadPage(pagenumber)
         }
     }
 
     if (evt.key == "ArrowRight") {
         rightcounter++
         doAction(rightcounter)
+    }
+
+    if (evt.key == "ArrowUp") { // Debugging things
+        alert(actions)
     }
 }
 
@@ -43,10 +49,34 @@ function doAction(rightcounter) {
 }
 
 async function goNextOrHome() {
-    var checkpage = await fetch("./" + (pagenumber+1) + ".html");
+    pagenumber++
+    let checkpage = await fetch("./" + pagenumber + ".html");
     if (checkpage.ok) {
-        location= "./" + (pagenumber+1) + ".html"
+        loadPage(pagenumber)
     } else {
         location= "../mono.html"
+    }
+}
+
+async function loadPage(pagenumber) {
+    if (useSPA) {
+        let newpage = await fetch("./" + pagenumber + ".html")
+        let newtext = await newpage.text()
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(newtext, 'text/html');
+        let newbody = doc.body;
+        let newscript = doc.scripts[0]
+
+        document.body = newbody
+
+        actions = [] // get rid of current page's actions (in case next one defines none)
+        if (newscript.childNodes.length > 0) { // There's additional script defined
+            let scriptcontent = newscript.childNodes[0].textContent
+            eval(scriptcontent)
+        }
+    
+        rightcounter = 0
+    } else {
+        location = "./" + pagenumber + ".html"
     }
 }
