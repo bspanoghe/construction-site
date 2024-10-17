@@ -69,6 +69,14 @@ body {
     padding: 2vmin;
 }
 
+.title {
+    position: relative;
+    border: 0;
+    font-size-adjust: 0.8;
+    font-family: monospace;
+    padding: 4vmin;
+}
+
 .inv {
     border-color: white;
     background-color: black;

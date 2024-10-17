@@ -153,7 +153,5 @@ button {
 }
 
 .god {
-    height: 90vh;
-    width: 100%;
-    object-fit: fill;
+    background-image: url("./images/sansening.png");
 }

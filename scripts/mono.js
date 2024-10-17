@@ -1,4 +1,4 @@
-var useSPA = true;
+var useSPA = false;
 
 var path = window.location.pathname;
 var pagenumber = Number(path.split("/").pop().split(".")[0])
@@ -17,6 +17,7 @@ function keyBlade(evt) {
             location = "../mono.html"
         } else {
             pagenumber--
+            if (typeof window.audio !== 'undefined') {window.audio.pause()} // stop audio when going back a page
             loadPage(pagenumber)
         }
     }
@@ -79,4 +80,11 @@ async function loadPage(pagenumber) {
     } else {
         location = "./" + pagenumber + ".html"
     }
+}
+
+// Helper functions
+
+function reveal() {
+    let hiddenboy = document.getElementsByClassName("hidden")[0]
+    hiddenboy.className = hiddenboy.className.replace(/(?:^)hidden(?= )/g , "")  
 }
