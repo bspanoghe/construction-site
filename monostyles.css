@@ -110,3 +110,27 @@ body {
 .hidden {
     opacity: 0;
 }
+
+.shaking {
+    animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) translateY(0) rotate(0)}
+    20% { transform:  translateX(-14px) translateY(-9px) rotate(23deg) }
+    40% { transform: translateX(16px) translateY(7px) rotate(-19deg) }
+    60% { transform: translateX(-6px) translateY(-3px) rotate(17deg) }
+    80% { transform: translateX(3px) translateY(-9px) rotate(-29deg) }
+    100% { transform: translateX(0) translateY(0) rotate(0)}
+}
+
+.appearing {
+    opacity: 0%;
+    animation: appear 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}

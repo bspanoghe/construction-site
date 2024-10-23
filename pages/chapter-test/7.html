@@ -7,50 +7,23 @@
     <link rel="stylesheet" href="../../monostyles.css">
 </head>
 
-<body>
+<body class="inv">
     <div class="page">
-        <div class="row" style="height:80%;">
-            <div class="panel" style="height:100%;">
-                <img src="../../images/itsfine.png" alt="" class="img">
-    
-                <div class="text" style="top:30%; left:70%;">
-                    Hwuh?
-                </div>  
-            </div>
+        <img src="../../images/comic-test/monlogo.png" alt="" class="hidden img" style="height:30%; width:auto; animation-duration: 2s;">  
 
-            <div class="col" style="width:40%;">
-                <div class="hidden panel" style="height:40%;">
-                    <img src="../../images/itsfine.png" alt="" class="img">
-        
-                    <div class="text" style="top:30%; left:70%;">
-                        Hyuh?
-                    </div>  
-                </div>
-
-                <div class="hidden panel" style="height:80%;">
-                    <img src="../../images/itsfine.png" alt="" class="img">
-        
-                    <div class="text" style="top:30%; left:70%;">
-                        Huhh?
-                    </div>  
-                </div>
-            </div>
+        <div class="hidden inv text title" style="animation-duration: 4s; animation-delay: 2s;">
+            Chapter 0</br>A boy and his horse
         </div>
     </div>
 
+    <script src="../../scripts/helpers.js"></script>
     <script>
         actions = [
             function() {
-                window.audio = new Audio("../../audio/AtWhatCost_ringtone.mp3");
-                window.audio.play();
-                document.getElementsByClassName("hidden")[0].className = "panel";
-            },
-            function() {
-                window.audio.pause()
-                window.audio = new Audio("../../audio/phonepickup.mp3");
-                window.audio.play();
-                document.getElementsByClassName("hidden")[0].className = "panel";
-            },
+                wait(3);
+                dramaticReveal();
+                dramaticReveal();
+            }
         ]
     </script>
     <script src="../../scripts/mono.js"></script>

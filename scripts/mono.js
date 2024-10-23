@@ -1,8 +1,8 @@
-var useSPA = false;
+let useSPA = false;
 
-var path = window.location.pathname;
-var pagenumber = Number(path.split("/").pop().split(".")[0])
-var rightcounter = 0
+let path = window.location.pathname;
+let pagenumber = Number(path.split("/").pop().split(".")[0])
+let rightcounter = 0
 
 window.addEventListener("keydown", keyBlade, false);
 window.addEventListener("click", clickBlade, false);
@@ -64,7 +64,7 @@ async function loadPage(pagenumber) {
         let newpage = await fetch("./" + pagenumber + ".html")
         let newtext = await newpage.text()
         let parser = new DOMParser();
-        let doc = parser.parseFromString(newtext, 'text/html');
+        let doc = parser.parseFromString(newtext, "text/html");
         let newbody = doc.body;
         let newscript = doc.scripts[0]
 
@@ -80,11 +80,4 @@ async function loadPage(pagenumber) {
     } else {
         location = "./" + pagenumber + ".html"
     }
-}
-
-// Helper functions
-
-function reveal() {
-    let hiddenboy = document.getElementsByClassName("hidden")[0]
-    hiddenboy.className = hiddenboy.className.replace(/(?:^)hidden(?= )/g , "")  
 }
