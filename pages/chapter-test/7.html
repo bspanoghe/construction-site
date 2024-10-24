@@ -7,12 +7,30 @@
     <link rel="stylesheet" href="../../monostyles.css">
 </head>
 
-<body class="inv">
+<body>
     <div class="page">
-        <img src="../../images/comic-test/monlogo.png" alt="" class="hidden img" style="height:30%; width:auto; animation-duration: 2s;">  
+        <div class="row" style="height:80%;">
+            <div class="panel" style="height:100%;">
+                <img src="../../images/comic-test/5.png" alt="" class="img">
+    
+                <div class="text" style="top:40%; left:80%;">
+                    ...
+                </div>  
+            </div>
 
-        <div class="hidden inv text title" style="animation-duration: 4s; animation-delay: 2s;">
-            Chapter 0</br>A boy and his horse
+            <div class="col" style="width:40%;">
+                <div class="hidden shaking panel" style="height:50%;">
+                    <img src="../../images/comic-test/6.png" alt="" class="img">
+        
+                    <div class="text" style="top:30%; left:70%;">
+                        TUDUDUDU
+                    </div>  
+                </div>
+
+                <div class="hidden panel" style="height:50%;">
+                    <img src="../../images/comic-test/7.png" alt="" class="img">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -20,10 +38,18 @@
     <script>
         actions = [
             function() {
-                wait(3);
-                dramaticReveal();
-                dramaticReveal();
-            }
+                window.audio = new Audio("../../audio/AtWhatCost_ringtone.mp3");
+                window.audio.play();
+                reveal();
+                wait(1);
+            },
+            function() {
+                removeClass("shaking")
+                window.audio.pause()
+                window.audio = new Audio("../../audio/phonepickup.mp3");
+                window.audio.play();
+                reveal();
+            },
         ]
     </script>
     <script src="../../scripts/mono.js"></script>

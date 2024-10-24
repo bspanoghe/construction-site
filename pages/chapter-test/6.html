@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="../../monostyles.css">
 </head>
 
-<body>
+<body class="inv">
     <div class="page">
-        <div class="panel" style="height:80%;">
-            <img src="../../images/comic-test/4.png" alt="" class="img">
+        <img src="../../images/comic-test/monlogo.png" alt="" class="hidden img" style="height:30%; width:auto; animation-duration: 2s;">  
 
-            <div class="text" style="top:30%; left:70%;">
-                Argh?!
-            </div>  
-        </div>    
+        <div class="hidden inv text title" style="animation-duration: 4s; animation-delay: 2s;">
+            Chapter 0</br>A boy and his horse
+        </div>
     </div>
 
+    <script src="../../scripts/helpers.js"></script>
+    <script>
+        actions = [
+            function() {
+                wait(3);
+                dramaticReveal();
+                dramaticReveal();
+            }
+        ]
+    </script>
     <script src="../../scripts/mono.js"></script>
 </body>
 </html>
