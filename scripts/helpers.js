@@ -1,5 +1,5 @@
-function preloadImages(dir) {
-    let files = [...Array(100).keys(), "monlogo"];
+function preloadImages(dir, n) {
+    let files = [...Array(n+1).keys(), "monlogo"].slice(1);
     let images = [];
 
     for (let i = 0; i < files.length; i++) {
