@@ -4,7 +4,7 @@ function preloadImages(dir, n) {
 
     for (let i = 0; i < files.length; i++) {
         images[i] = new Image();
-        images[i].src = dir + files[i] + ".png";
+        images[i].src = dir + "/" + files[i] + ".png";
     }
 }
 

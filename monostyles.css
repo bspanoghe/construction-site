@@ -69,6 +69,11 @@ body {
     padding: 2vmin;
 }
 
+.dialogue {
+    height: 100%;
+    font-family:"Comic Sans MS", "Comic Sans";
+}
+
 .title {
     position: relative;
     border: 0;

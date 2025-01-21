@@ -66,17 +66,18 @@ async function loadPage(pagenumber) {
         let parser = new DOMParser();
         let doc = parser.parseFromString(newtext, "text/html");
         let newbody = doc.body;
-        let newscript = doc.scripts[0]
-
-        document.body = newbody
 
         actions = [] // get rid of current page's actions (in case next one defines none)
-        if (newscript.childNodes.length > 0) { // There's additional script defined
-            let scriptcontent = newscript.childNodes[0].textContent
-            eval(scriptcontent)
+        for (var i=0; i < doc.scripts.length; i++){
+            let script = doc.scripts[i]
+            if (script.childNodes.length > 0) { // There's additional script defined
+                let scriptcontent = script.childNodes[0].textContent
+                eval(scriptcontent)
+            } 
         }
-    
+        
         rightcounter = 0
+        document.body = newbody
     } else {
         location = "./" + pagenumber + ".html"
     }
