@@ -1,4 +1,4 @@
-let useSPA = false;
+let useSPA = true;
 
 let path = window.location.pathname;
 let pagenumber = Number(path.split("/").pop().split(".")[0])
